@@ -1,0 +1,48 @@
+from sqlalchemy import Column, Integer, String
+
+from src.config.database import Base
+
+
+class SupportActivity(Base):
+    __tablename__ = "fichactiv"
+
+    id = Column("ID_ACTD", Integer, primary_key=True, index=True)
+    activity_id = Column("ID_ACT", Integer, index=True)
+    structure = Column("STRUCT", Integer, index=True)
+    agent = Column("AGENT", Integer, index=True)
+    platform = Column("PLATFORM", Integer, index=True)
+    cs_code = Column("CS_CODE", String, index=True)
+    code_household_old = Column("CODEMEN_OLD", String)
+    code_household = Column("CODEMEN", String, index=True)
+    date_created = Column("DATEFICH", String)
+    day_save = Column("DENREGJ", Integer, index=True)
+    month_save = Column("DENREGM", Integer, index=True)
+    year_save = Column("DENREGA", Integer, index=True)
+    region = Column("IDREG", Integer, index=True)
+    department = Column("IDDEPART", Integer)
+    sub_prefecture = Column("IDSP", Integer, index=True)
+    commune = Column("IDCOM", Integer, index=True)
+    district = Column("IDQUAR", Integer, index=True)
+    household = Column("IDNUM", Integer, index=True)
+    oev = Column("IDOEV", Integer, index=True)
+    member = Column("CODEBEN", String, index=True)
+    status = Column("STATU", String, index=True)
+    code_activity = Column("ACTIV", String, index=True)
+    need = Column("BESOINS", String)
+    nutritional_support = Column("SOUTALI", String, index=True)
+    health_support = Column("SOUTMED", String, index=True)
+    school_support = Column("SOUTSCO", String, index=True)
+    psyco_support = Column("SOUTPSYCO", String, index=True)
+    economic_support = Column("SOUTECO", String)
+    shelters = Column("ABRI", String)
+    prev = Column("PREV", String, index=True)
+    legal_support = Column("SOUTJUR", String, index=True)
+    age_range = Column("TRCH_AGE", String)
+    hiv_eligibility = Column("ELG_SERO", String)
+    clinic_code = Column("CODE_CLINIC", String)
+    comment_treatment = Column("OBS_T_ARV", String)
+    comment = Column("COMMENT", String)
+    registration_status = Column("Etat", Integer)
+    registration_status_change = Column("Etat_modif", Integer)
+    registration_status_report = Column("Etat_stat", Integer)
+    registration_status_remove = Column("Etat_del", Integer)
